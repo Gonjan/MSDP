@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dataProcess.model.modelMapper.OriginAdult2DMapper">
+  <resultMap id="BaseResultMap" type="dataProcess.model.OriginAdult2D">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="native_country" jdbcType="VARCHAR" property="nativeCountry" />
+    <result column="occupation" jdbcType="VARCHAR" property="occupation" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+  </resultMap>
+  <insert id="insert" parameterType="dataProcess.model.OriginAdult2D">
+    insert into origin_adult_2d (id, age, sex, 
+      native_country, occupation, education
+      )
+    values (#{id,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, 
+      #{nativeCountry,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="dataProcess.model.OriginAdult2D">
+    insert into origin_adult_2d
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="nativeCountry != null">
+        native_country,
+      </if>
+      <if test="occupation != null">
+        occupation,
+      </if>
+      <if test="education != null">
+        education,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeCountry != null">
+        #{nativeCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null">
+        #{education,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    SELECT * FROM origin_adult_2d
+  </select>
+
+  <insert id="insertByBatch" parameterType="java.util.List">
+    INSERT INTO origin_adult_2d (age, sex,
+    native_country, occupation, education
+    ) VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.age},#{item.sex},#{item.nativeCountry},
+      #{item.occupation},#{item.education})
+    </foreach>
+
+  </insert>
+</mapper>

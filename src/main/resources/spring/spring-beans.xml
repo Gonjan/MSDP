@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!--&lt;!&ndash;注册dao，实际是由mybatis根据dao接口生成的相应代理类， 在这里注入到Spring容器中&ndash;&gt;-->
+    <!--这种方式需要为每一个mapper接口写一个配置bean，比较繁琐，所有可以通过MapperScannerConfigure来自动扫描所有mapper并生成代理类-->
+    <!--<bean id="originAdultMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--<property name="mapperInterface" value="dataProcess.model.modelMapper.OriginAdultMapper"/>-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory" />-->
+    <!--</bean>-->
+
+
+    <!--注册service-->
+    <bean id="originAdultService" class="dataProcess.service.impl.OriginAdultServiceImpl">
+        <property name="originAdultMapper" ref="originAdultMapper"/>
+        <!-- MapperScannerConfigure方式生成的代理类，是在运行将bean时注入Spring容器，所以在编译期这里会提示找不到这个名字的bean -->
+    </bean>
+
+    <bean id="originAdult2DService" class="dataProcess.service.impl.OriginAdult2DServiceImpl">
+        <property name="originAdult2DMapper" ref="originAdult2DMapper"/>
+    </bean>
+
+    <bean id="adult2DGroupService" class="dataProcess.service.impl.Adult2DGroupServiceImpl">
+        <property name="adult2DGroupMapper" ref="adult2DGroupMapper"/>
+    </bean>
+
+    <bean id="originAdult3DService" class="dataProcess.service.impl.OriginAdult3DServiceImpl">
+        <property name="originAdult3DMapper" ref="originAdult3DMapper"/>
+    </bean>
+
+    <bean id="adult3DGroupService" class="dataProcess.service.impl.Adult3DGroupServiceImpl">
+        <property name="adult3DGroupMapper" ref="adult3DGroupMapper"/>
+    </bean>
+
+    <bean id="originAdult4DService" class="dataProcess.service.impl.OriginAdult4DServiceImpl">
+        <property name="originAdult4DMapper" ref="originAdult4DMapper"/>
+    </bean>
+
+    <bean id="adult4DGroupService" class="dataProcess.service.impl.Adult4DGroupServiceImpl">
+        <property name="adult4DGroupMapper" ref="adult4DGroupMapper"/>
+    </bean>
+
+    <bean id="originAdult5DService" class="dataProcess.service.impl.OriginAdult5DServiceImpl">
+        <property name="originAdult5DMapper" ref="originAdult5DMapper"/>
+    </bean>
+
+    <bean id="adult5DGroupService" class="dataProcess.service.impl.Adult5DGroupServiceImpl">
+        <property name="adult5DGroupMapper" ref="adult5DGroupMapper"/>
+    </bean>
+
+</beans>
