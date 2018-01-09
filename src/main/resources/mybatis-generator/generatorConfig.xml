@@ -35,7 +35,7 @@
         </javaClientGenerator>
 
 
-        <table tableName="WEIGHT_ORIGIN_ADULT_5D" domainObjectName="WeightOriginAdult5D"
+        <table tableName="WEIGHT_ADULT_5D_GROUP" domainObjectName="WeightAdult5DGroup"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
