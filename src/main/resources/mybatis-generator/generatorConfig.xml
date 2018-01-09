@@ -14,30 +14,36 @@
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/mpdp?nullNamePatternMatchesAll=true&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8" userId="root"
-                        password="root"/>
+                        password="root">
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
 
         <javaModelGenerator targetPackage="dataProcess.model"
-                            targetProject="F:/MPDP/src/main/java">
+                            targetProject="F:/MSDP/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="dataProcess.model.xml"
-                         targetProject="F:/MPDP/src/main/java">
+                         targetProject="F:/MSDP/src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <javaClientGenerator targetPackage="dataProcess.model.modelMapper"
-                             targetProject="F:/MPDP/src/main/java" type="XMLMAPPER">
+                             targetProject="F:/MSDP/src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
 
-        <table tableName="ADULT_2D_GROUP" domainObjectName="Adult2DGroup"
+        <table tableName="WEIGHT_ORIGIN_ADULT_5D" domainObjectName="WeightOriginAdult5D"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false" enableSelectByPrimaryKey="true">
+               selectByExampleQueryId="false">
         </table>
+
+        <!--<table tableName="WEIGHT_ORIGIN_ADULT_2D" domainObjectName="WeightOriginAdult2D">-->
+
+        <!--</table>-->
 
     </context>
 </generatorConfiguration>
