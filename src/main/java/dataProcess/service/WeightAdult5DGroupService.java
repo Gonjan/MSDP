@@ -6,6 +6,8 @@ package dataProcess.service;
 
 import dataProcess.model.WeightAdult5DGroup;
 
+import java.util.List;
+
 /**
  *
  * @author Gonjan
@@ -23,4 +25,7 @@ public interface WeightAdult5DGroupService {
     int updateByPrimaryKeySelective(WeightAdult5DGroup record);
 
     int updateByPrimaryKey(WeightAdult5DGroup record);
+
+    int insertByBatch(List<WeightAdult5DGroup> records);
+
 }

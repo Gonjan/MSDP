@@ -174,4 +174,14 @@
       weight = #{weight,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="insertByBatch" parameterType="java.util.List">
+    INSERT INTO weight_adult_5d_group (tuple_id, group_id,
+    age, sex, native_country,
+    occupation, education, weight) VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.tupleId},#{item.groupId,},#{item.age},#{item.sex},#{item.nativeCountry},
+      #{item.occupation},#{item.education}, #{item.weight})
+    </foreach>
+  </insert>
+
 </mapper>

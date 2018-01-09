@@ -4,10 +4,42 @@
  */
 package dataProcess.service.impl;
 
+import dataProcess.model.WeightOriginAdult5D;
+import dataProcess.service.WeightOriginAdult5DService;
+
+import java.util.List;
+
 /**
  *
  * @author Gonjan
  * @version $Id: WeightOriginAdult5DServiceImpl.java, v 0.1 2018年01月09日 14:59 Gonjan Exp $
  */
-public class WeightOriginAdult5DServiceImpl {
+public class WeightOriginAdult5DServiceImpl implements WeightOriginAdult5DService {
+    public int deleteByPrimaryKey(Integer id) {
+        return 0;
+    }
+
+    public int insert(WeightOriginAdult5D record) {
+        return 0;
+    }
+
+    public int insertSelective(WeightOriginAdult5D record) {
+        return 0;
+    }
+
+    public WeightOriginAdult5D selectByPrimaryKey(Integer id) {
+        return null;
+    }
+
+    public int updateByPrimaryKeySelective(WeightOriginAdult5D record) {
+        return 0;
+    }
+
+    public int updateByPrimaryKey(WeightOriginAdult5D record) {
+        return 0;
+    }
+
+    public int insertByBatch(List<WeightOriginAdult5D> records) {
+        return 0;
+    }
 }

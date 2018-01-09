@@ -6,6 +6,8 @@ package dataProcess.service;
 
 import dataProcess.model.WeightOriginAdult4D;
 
+import java.util.List;
+
 /**
  *
  * @author Gonjan
@@ -23,4 +25,6 @@ public interface WeightOriginAdult4DService {
     int updateByPrimaryKeySelective(WeightOriginAdult4D record);
 
     int updateByPrimaryKey(WeightOriginAdult4D record);
+
+    int insertByBatch(List<WeightOriginAdult4D> records);
 }

@@ -2,6 +2,8 @@ package dataProcess.model.modelMapper;
 
 import dataProcess.model.WeightOriginAdult5D;
 
+import java.util.List;
+
 public interface WeightOriginAdult5DMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,7 @@ public interface WeightOriginAdult5DMapper {
     int updateByPrimaryKeySelective(WeightOriginAdult5D record);
 
     int updateByPrimaryKey(WeightOriginAdult5D record);
+
+    int insertByBatch(List<WeightOriginAdult5D> records);
+
 }

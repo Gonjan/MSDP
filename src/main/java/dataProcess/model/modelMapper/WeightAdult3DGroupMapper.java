@@ -2,6 +2,8 @@ package dataProcess.model.modelMapper;
 
 import dataProcess.model.WeightAdult3DGroup;
 
+import java.util.List;
+
 public interface WeightAdult3DGroupMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface WeightAdult3DGroupMapper {
     int updateByPrimaryKeySelective(WeightAdult3DGroup record);
 
     int updateByPrimaryKey(WeightAdult3DGroup record);
+
+    int insertByBatch(List<WeightAdult3DGroup> records);
 }

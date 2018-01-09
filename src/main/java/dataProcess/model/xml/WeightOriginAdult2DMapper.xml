@@ -114,4 +114,14 @@
       weight = #{weight,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="insertByBatch" parameterType="java.util.List">
+    INSERT INTO weight_origin_adult_2d (age, sex,
+    native_country, occupation, education, weight
+    ) VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.age},#{item.sex},#{item.nativeCountry},
+      #{item.occupation},#{item.education}, #{item.weight})
+    </foreach>
+
+  </insert>
 </mapper>

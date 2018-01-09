@@ -4,10 +4,42 @@
  */
 package dataProcess.service.impl;
 
+import dataProcess.model.WeightAdult3DGroup;
+import dataProcess.service.WeightAdult3DGroupService;
+
+import java.util.List;
+
 /**
  *
  * @author Gonjan
  * @version $Id: WeightAdult3DGroupServiceImpl.java, v 0.1 2018年01月09日 14:58 Gonjan Exp $
  */
-public class WeightAdult3DGroupServiceImpl {
+public class WeightAdult3DGroupServiceImpl implements WeightAdult3DGroupService {
+    public int deleteByPrimaryKey(Integer id) {
+        return 0;
+    }
+
+    public int insert(WeightAdult3DGroup record) {
+        return 0;
+    }
+
+    public int insertSelective(WeightAdult3DGroup record) {
+        return 0;
+    }
+
+    public WeightAdult3DGroup selectByPrimaryKey(Integer id) {
+        return null;
+    }
+
+    public int updateByPrimaryKeySelective(WeightAdult3DGroup record) {
+        return 0;
+    }
+
+    public int updateByPrimaryKey(WeightAdult3DGroup record) {
+        return 0;
+    }
+
+    public int insertByBatch(List<WeightAdult3DGroup> records) {
+        return 0;
+    }
 }
