@@ -5,6 +5,7 @@
 package dataProcess.service.impl;
 
 import dataProcess.model.WeightOriginAdult2D;
+import dataProcess.model.modelMapper.WeightOriginAdult2DMapper;
 import dataProcess.service.WeightOriginAdult2DService;
 
 import java.util.List;
@@ -15,6 +16,9 @@ import java.util.List;
  * @version $Id: WeightOriginAdult2DServiceImpl.java, v 0.1 2018年01月09日 14:58 Gonjan Exp $
  */
 public class WeightOriginAdult2DServiceImpl implements WeightOriginAdult2DService {
+
+    private WeightOriginAdult2DMapper weightOriginAdult2DMapper;
+
     public int deleteByPrimaryKey(Integer id) {
         return 0;
     }
@@ -40,6 +44,10 @@ public class WeightOriginAdult2DServiceImpl implements WeightOriginAdult2DServic
     }
 
     public int insertByBatch(List<WeightOriginAdult2D> records) {
-        return 0;
+        return weightOriginAdult2DMapper.insertByBatch(records);
+    }
+
+    public void setWeightOriginAdult2DMapper(WeightOriginAdult2DMapper weightOriginAdult2DMapper) {
+        this.weightOriginAdult2DMapper = weightOriginAdult2DMapper;
     }
 }

@@ -5,6 +5,7 @@
 package dataProcess.service.impl;
 
 import dataProcess.model.WeightAdult5DGroup;
+import dataProcess.model.modelMapper.WeightAdult5DGroupMapper;
 import dataProcess.service.WeightAdult5DGroupService;
 
 import java.util.List;
@@ -15,6 +16,8 @@ import java.util.List;
  * @version $Id: WeightAdult5DGroupServiceImpl.java, v 0.1 2018年01月09日 14:58 Gonjan Exp $
  */
 public class WeightAdult5DGroupServiceImpl implements WeightAdult5DGroupService {
+    private WeightAdult5DGroupMapper weightAdult5DGroupMapper;
+
     public int deleteByPrimaryKey(Integer id) {
         return 0;
     }
@@ -40,6 +43,10 @@ public class WeightAdult5DGroupServiceImpl implements WeightAdult5DGroupService 
     }
 
     public int insertByBatch(List<WeightAdult5DGroup> records) {
-        return 0;
+        return weightAdult5DGroupMapper.insertByBatch(records);
+    }
+
+    public void setWeightAdult5DGroupMapper(WeightAdult5DGroupMapper weightAdult5DGroupMapper) {
+        this.weightAdult5DGroupMapper = weightAdult5DGroupMapper;
     }
 }

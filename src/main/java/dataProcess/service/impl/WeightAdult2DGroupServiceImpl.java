@@ -46,7 +46,7 @@ public class WeightAdult2DGroupServiceImpl implements WeightAdult2DGroupService 
     }
 
     public int insertByBatch(List<WeightAdult2DGroup> records) {
-        return 0;
+        return weightAdult2DGroupMapper.insertByBatch(records);
     }
 
     public void setWeightAdult2DGroupMapper(WeightAdult2DGroupMapper weightAdult2DGroupMapper) {

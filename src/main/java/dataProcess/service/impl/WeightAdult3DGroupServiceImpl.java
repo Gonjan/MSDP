@@ -5,6 +5,7 @@
 package dataProcess.service.impl;
 
 import dataProcess.model.WeightAdult3DGroup;
+import dataProcess.model.modelMapper.WeightAdult3DGroupMapper;
 import dataProcess.service.WeightAdult3DGroupService;
 
 import java.util.List;
@@ -15,6 +16,9 @@ import java.util.List;
  * @version $Id: WeightAdult3DGroupServiceImpl.java, v 0.1 2018年01月09日 14:58 Gonjan Exp $
  */
 public class WeightAdult3DGroupServiceImpl implements WeightAdult3DGroupService {
+
+    private WeightAdult3DGroupMapper weightAdult3DGroupMapper;
+
     public int deleteByPrimaryKey(Integer id) {
         return 0;
     }
@@ -40,6 +44,10 @@ public class WeightAdult3DGroupServiceImpl implements WeightAdult3DGroupService 
     }
 
     public int insertByBatch(List<WeightAdult3DGroup> records) {
-        return 0;
+        return weightAdult3DGroupMapper.insertByBatch(records);
+    }
+
+    public void setWeightAdult3DGroupMapper(WeightAdult3DGroupMapper weightAdult3DGroupMapper) {
+        this.weightAdult3DGroupMapper = weightAdult3DGroupMapper;
     }
 }
