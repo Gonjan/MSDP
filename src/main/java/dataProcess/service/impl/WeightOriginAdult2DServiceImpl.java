@@ -47,6 +47,10 @@ public class WeightOriginAdult2DServiceImpl implements WeightOriginAdult2DServic
         return weightOriginAdult2DMapper.insertByBatch(records);
     }
 
+    public List<WeightOriginAdult2D> selectAll() {
+        return weightOriginAdult2DMapper.selectAll();
+    }
+
     public void setWeightOriginAdult2DMapper(WeightOriginAdult2DMapper weightOriginAdult2DMapper) {
         this.weightOriginAdult2DMapper = weightOriginAdult2DMapper;
     }

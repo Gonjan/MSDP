@@ -133,6 +133,8 @@
       (#{item.age},#{item.sex},#{item.nativeCountry},
       #{item.occupation},#{item.education}, #{item.weight})
     </foreach>
-
   </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    SELECT * FROM weight_origin_adult_3d
+  </select>
 </mapper>

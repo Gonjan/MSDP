@@ -47,6 +47,10 @@ public class WeightOriginAdult5DServiceImpl implements WeightOriginAdult5DServic
         return weightOriginAdult5DMapper.insertByBatch(records);
     }
 
+    public List<WeightOriginAdult5D> selectAll() {
+        return weightOriginAdult5DMapper.selectAll();
+    }
+
     public void setWeightOriginAdult5DMapper(WeightOriginAdult5DMapper weightOriginAdult5DMapper) {
         this.weightOriginAdult5DMapper = weightOriginAdult5DMapper;
     }

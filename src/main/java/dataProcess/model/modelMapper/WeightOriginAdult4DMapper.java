@@ -18,4 +18,7 @@ public interface WeightOriginAdult4DMapper {
     int updateByPrimaryKey(WeightOriginAdult4D record);
 
     int insertByBatch(List<WeightOriginAdult4D> records);
+
+    List<WeightOriginAdult4D> selectAll();
+
 }

@@ -19,4 +19,6 @@ public interface WeightOriginAdult5DMapper {
 
     int insertByBatch(List<WeightOriginAdult5D> records);
 
+    List<WeightOriginAdult5D> selectAll();
+
 }

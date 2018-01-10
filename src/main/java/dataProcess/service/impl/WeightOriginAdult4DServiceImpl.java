@@ -48,6 +48,10 @@ public class WeightOriginAdult4DServiceImpl implements WeightOriginAdult4DServic
         return weightOriginAdult4DMapper.insertByBatch(records);
     }
 
+    public List<WeightOriginAdult4D> selectAll() {
+        return weightOriginAdult4DMapper.selectAll();
+    }
+
     public void setWeightOriginAdult4DMapper(WeightOriginAdult4DMapper weightOriginAdult4DMapper) {
         this.weightOriginAdult4DMapper = weightOriginAdult4DMapper;
     }

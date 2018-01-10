@@ -28,4 +28,7 @@ public interface WeightOriginAdult3DService {
 
     int insertByBatch(List<WeightOriginAdult3D> records);
 
+    List<WeightOriginAdult3D> selectAll();
+
+
 }

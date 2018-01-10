@@ -18,4 +18,6 @@ public interface WeightOriginAdult3DMapper {
     int updateByPrimaryKey(WeightOriginAdult3D record);
 
     int insertByBatch(List<WeightOriginAdult3D> records);
+    List<WeightOriginAdult3D> selectAll();
+
 }

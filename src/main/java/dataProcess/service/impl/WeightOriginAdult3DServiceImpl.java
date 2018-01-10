@@ -47,6 +47,10 @@ public class WeightOriginAdult3DServiceImpl implements WeightOriginAdult3DServic
         return weightOriginAdult3DMapper.insertByBatch(records);
     }
 
+    public List<WeightOriginAdult3D> selectAll() {
+        return weightOriginAdult3DMapper.selectAll();
+    }
+
     public void setWeightOriginAdult3DMapper(WeightOriginAdult3DMapper weightOriginAdult3DMapper) {
         this.weightOriginAdult3DMapper = weightOriginAdult3DMapper;
     }

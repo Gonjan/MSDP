@@ -27,4 +27,7 @@ public interface WeightOriginAdult5DService {
     int updateByPrimaryKey(WeightOriginAdult5D record);
 
     int insertByBatch(List<WeightOriginAdult5D> records);
+
+    List<WeightOriginAdult5D> selectAll();
+
 }
