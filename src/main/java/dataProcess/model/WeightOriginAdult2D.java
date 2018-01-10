@@ -1,5 +1,8 @@
 package dataProcess.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WeightOriginAdult2D {
     private Integer id;
 
@@ -14,6 +17,13 @@ public class WeightOriginAdult2D {
     private String education;
 
     private Double weight;
+
+    public List<String> getSensitiveAttrs() {
+        List<String> sas = new ArrayList<String>();
+        sas.add(occupation);
+        sas.add(education);
+        return sas;
+    }
 
     public Integer getId() {
         return id;
@@ -69,5 +79,82 @@ public class WeightOriginAdult2D {
 
     public void setWeight(Double weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return id + "," + age + "," + sex + "," + nativeCountry + "," + occupation + "," + education + "," + weight;
+    }
+
+    public String toStringWithoutId() {
+        return age + "," + sex + "," + nativeCountry + "," + occupation + "," + education + "," + weight;
+    }
+
+    public WeightOriginAdult2D() {}
+
+    private WeightOriginAdult2D(Builder b) {
+        age = b.age;
+        sex = b.sex;
+        nativeCountry = b.nativeCountry;
+        occupation = b.occupation;
+        education = b.education;
+        weight = b.weight;
+    }
+
+    public static class Builder {
+        private Integer id;
+
+        private Integer age;
+
+        private String sex;
+
+        private String nativeCountry;
+
+        private String occupation;
+
+        private String education;
+
+        private Double weight;
+
+        public Builder() {}
+
+        public Builder id(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder age(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder sex(String sex) {
+            this.sex = sex;
+            return this;
+        }
+
+        public Builder nativeCountry(String nativeCountry) {
+            this.nativeCountry = nativeCountry;
+            return this;
+        }
+
+        public Builder education(String education) {
+            this.education = education;
+            return this;
+        }
+
+        public Builder occupation(String occupation) {
+            this.occupation = occupation;
+            return this;
+        }
+
+        public Builder weight(Double weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public WeightOriginAdult2D build() {
+            return new WeightOriginAdult2D(this);
+        }
     }
 }
