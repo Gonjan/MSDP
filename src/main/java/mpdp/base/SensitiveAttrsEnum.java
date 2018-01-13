@@ -15,7 +15,7 @@ public enum SensitiveAttrsEnum {
 
     OCCUPATION("occupation", "职业"),
     EDUCATION("education","教育程度"),
-    MARITALSTATUS("maritalstatus","婚姻状况"),
+    MARITALSTATUS("marital-status","婚姻状况"),
     WORKCLASS("workclass","工薪阶层"),
     RACE("race","种族");
 
@@ -42,4 +42,11 @@ public enum SensitiveAttrsEnum {
         return null;
     }
 
+    public String getAttrs() {
+        return attrs;
+    }
+
+    public String getAttrsDesc() {
+        return attrsDesc;
+    }
 }

@@ -6,4 +6,95 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
+    <!--注入权重配置-->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="location" value="classpath:/spring/weight-config.properties"/>
+    </bean>
+
+
+    <bean id="weightContainer" class="dataProcess.service.weightProcess.WeightContainer">
+        <property name="occupationAttrsWeightMap">
+            <map>
+                <entry key="Tech-support" value="${Tech-support}"/>
+                <entry key="Craft-repair" value="${Craft-repair}"/>
+                <entry key="Other-service" value="${Other-service}"/>
+                <entry key="Sales" value="${Sales}"/>
+                <entry key="Exec-managerial" value="${Exec-managerial}"/>
+                <entry key="Prof-specialty" value="${Prof-specialty}"/>
+                <entry key="Handlers-cleaners" value="${Handlers-cleaners}"/>
+                <entry key="Machine-op-inspct" value="${Machine-op-inspct}"/>
+                <entry key="Adm-clerical" value="${Adm-clerical}"/>
+                <entry key="Farming-fishing" value="${Farming-fishing}"/>
+                <entry key="Transport-moving" value="${Transport-moving}"/>
+                <entry key="Priv-house-serv" value="${Priv-house-serv}"/>
+                <entry key="Protective-serv" value="${Protective-serv}"/>
+                <entry key="Armed-Forces" value="${Armed-Forces}"/>
+            </map>
+        </property>
+        <property name="educationAttrsWeightMap">
+            <map>
+                <entry key="Bachelors" value="${Bachelors}"/>
+                <entry key="Some-college" value="${Some-college}"/>
+                <entry key="11th" value="${11th}"/>
+                <entry key="HS-grad" value="${HS-grad}"/>
+                <entry key="Prof-school" value="${Prof-school}"/>
+                <entry key="Assoc-acdm" value="${Assoc-acdm}"/>
+                <entry key="Assoc-voc" value="${Assoc-voc}"/>
+                <entry key="9th" value="${9th}"/>
+                <entry key="7th-8th" value="${7th-8th}"/>
+                <entry key="12th" value="${12th}"/>
+                <entry key="Masters" value="${Masters}"/>
+                <entry key="1st-4th" value="${1st-4th}"/>
+                <entry key="10th" value="${10th}"/>
+                <entry key="Doctorate" value="${Doctorate}"/>
+                <entry key="5th-6th" value="${5th-6th}"/>
+                <entry key="Preschool" value="${Preschool}"/>
+
+            </map>
+        </property>
+        <property name="maritalStatusAttrsWeightMap">
+            <map>
+                <entry key="Married-civ-spouse" value="${Married-civ-spouse}"/>
+                <entry key="Divorced" value="${Divorced}"/>
+                <entry key="Never-married" value="${Never-married}"/>
+                <entry key="Separated" value="${Separated}"/>
+                <entry key="Widowed" value="${Widowed}"/>
+                <entry key="Married-spouse-absent" value="${Married-spouse-absent}"/>
+                <entry key="Married-AF-spouse" value="${Married-civ-spouse}"/>
+            </map>
+        </property>
+        <property name="workclassAttrsWeightMap">
+            <map>
+                <entry key="Private" value="${Private}"/>
+                <entry key="Self-emp-not-inc" value="${Self-emp-not-inc}"/>
+                <entry key="Self-emp-inc" value="${Self-emp-inc}"/>
+                <entry key="Federal-gov" value="${Federal-gov}"/>
+                <entry key="Local-gov" value="${Local-gov}"/>
+                <entry key="State-gov" value="${State-gov}"/>
+                <entry key="Without-pay" value="${Without-pay}"/>
+                <entry key="Never-worked" value="${Never-worked}"/>
+            </map>
+        </property>
+        <property name="raceAttrsWeightMap">
+            <map>
+                <entry key="White" value="${White}"/>
+                <entry key="Asian-Pac-Islander" value="${Asian-Pac-Islander}"/>
+                <entry key="Amer-Indian-Eskim" value="${Amer-Indian-Eskim}"/>
+                <entry key="Black" value="${Black}"/>
+                <entry key="Other" value="${Other}"/>
+            </map>
+        </property>
+
+        <property name="attrsWeightMap">
+            <map>
+                <entry key="occupation" value="${occupation}"/>
+                <entry key="education" value="${education}"/>
+                <entry key="marital-status" value="${marital-status}"/>
+                <entry key="workclass" value="${workclass}"/>
+                <entry key="race" value="${race}"/>
+            </map>
+        </property>
+    </bean>
 </beans>
