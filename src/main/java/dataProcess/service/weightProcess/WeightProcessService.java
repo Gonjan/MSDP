@@ -14,4 +14,6 @@ import java.util.List;
 public interface WeightProcessService {
 
     Double processWeight(List<String> sensitives);
+
+    void setWeightContainer(WeightContainer weightContainer);
 }
