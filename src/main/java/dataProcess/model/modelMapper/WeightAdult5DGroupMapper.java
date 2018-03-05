@@ -18,4 +18,5 @@ public interface WeightAdult5DGroupMapper {
     int updateByPrimaryKey(WeightAdult5DGroup record);
 
     int insertByBatch(List<WeightAdult5DGroup> records);
+
 }
