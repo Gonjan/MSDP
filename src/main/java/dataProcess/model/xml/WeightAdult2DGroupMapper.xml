@@ -6,7 +6,7 @@
     <result column="tuple_id" jdbcType="INTEGER" property="tupleId" />
     <result column="group_id" jdbcType="INTEGER" property="groupId" />
     <result column="age" jdbcType="INTEGER" property="age" />
-    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="native_country" jdbcType="VARCHAR" property="nativeCountry" />
     <result column="occupation" jdbcType="VARCHAR" property="occupation" />
     <result column="education" jdbcType="VARCHAR" property="education" />
@@ -31,7 +31,7 @@
       occupation, education, weight
       )
     values (#{id,jdbcType=INTEGER}, #{tupleId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, 
-      #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{nativeCountry,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{nativeCountry,jdbcType=VARCHAR},
       #{occupation,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, #{weight,jdbcType=DOUBLE}
       )
   </insert>
@@ -80,7 +80,7 @@
         #{age,jdbcType=INTEGER},
       </if>
       <if test="sex != null">
-        #{sex,jdbcType=INTEGER},
+        #{sex,jdbcType=VARCHAR},
       </if>
       <if test="nativeCountry != null">
         #{nativeCountry,jdbcType=VARCHAR},
@@ -109,7 +109,7 @@
         age = #{age,jdbcType=INTEGER},
       </if>
       <if test="sex != null">
-        sex = #{sex,jdbcType=INTEGER},
+        sex = #{sex,jdbcType=VARCHAR},
       </if>
       <if test="nativeCountry != null">
         native_country = #{nativeCountry,jdbcType=VARCHAR},
@@ -131,7 +131,7 @@
     set tuple_id = #{tupleId,jdbcType=INTEGER},
       group_id = #{groupId,jdbcType=INTEGER},
       age = #{age,jdbcType=INTEGER},
-      sex = #{sex,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=VARCHAR},
       native_country = #{nativeCountry,jdbcType=VARCHAR},
       occupation = #{occupation,jdbcType=VARCHAR},
       education = #{education,jdbcType=VARCHAR},

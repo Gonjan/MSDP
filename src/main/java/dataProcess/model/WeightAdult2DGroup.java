@@ -9,7 +9,7 @@ public class WeightAdult2DGroup {
 
     private Integer age;
 
-    private Integer sex;
+    private String sex;
 
     private String nativeCountry;
 
@@ -51,11 +51,11 @@ public class WeightAdult2DGroup {
         this.age = age;
     }
 
-    public Integer getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Integer sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
