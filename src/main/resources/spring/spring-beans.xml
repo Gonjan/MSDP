@@ -67,19 +67,25 @@
         <property name="weightAdult5DGroupMapper" ref="weightAdult5DGroupMapper"/>
     </bean>
 
-    <bean name="WeightOriginAdult2DService" class="dataProcess.service.impl.WeightOriginAdult2DServiceImpl">
+    <bean name="weightOriginAdult2DService" class="dataProcess.service.impl.WeightOriginAdult2DServiceImpl">
         <property name="weightOriginAdult2DMapper" ref="weightOriginAdult2DMapper"/>
     </bean>
 
-    <bean name="WeightOriginAdult3DService" class="dataProcess.service.impl.WeightOriginAdult3DServiceImpl">
+    <bean name="weightOriginAdult3DService" class="dataProcess.service.impl.WeightOriginAdult3DServiceImpl">
         <property name="weightOriginAdult3DMapper" ref="weightOriginAdult3DMapper"/>
     </bean>
 
-    <bean name="WeightOriginAdult4DService" class="dataProcess.service.impl.WeightOriginAdult4DServiceImpl">
+    <bean name="weightOriginAdult4DService" class="dataProcess.service.impl.WeightOriginAdult4DServiceImpl">
         <property name="weightOriginAdult4DMapper" ref="weightOriginAdult4DMapper"/>
     </bean>
 
-    <bean name="WeightOriginAdult5DService" class="dataProcess.service.impl.WeightOriginAdult5DServiceImpl">
+    <bean name="weightOriginAdult5DService" class="dataProcess.service.impl.WeightOriginAdult5DServiceImpl">
         <property name="weightOriginAdult5DMapper" ref="weightOriginAdult5DMapper"/>
+    </bean>
+
+
+
+
+    <bean id="weightProcessService" class="dataProcess.service.weightProcess.impl.WeightProcessServiceImpl">
     </bean>
 </beans>
