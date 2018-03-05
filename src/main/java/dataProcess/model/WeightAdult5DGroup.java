@@ -62,7 +62,7 @@ public class WeightAdult5DGroup {
     }
 
     public void setSex(String sex) {
-        this.sex = sex;
+        this.sex = sex == null ? null : sex.trim();
     }
 
     public String getNativeCountry() {
