@@ -5,16 +5,21 @@
 package mpdp;
 
 import com.google.common.collect.Lists;
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 import dataProcess.file.WriteToFile;
 import dataProcess.model.OriginAdult2D;
 import dataProcess.model.OriginAdult3D;
 import dataProcess.model.OriginAdult4D;
 import dataProcess.model.OriginAdult5D;
+import dataProcess.model.WeightOriginAdult2D;
 import dataProcess.service.OriginAdult2DService;
 import dataProcess.service.OriginAdult3DService;
 import dataProcess.service.OriginAdult4DService;
 import dataProcess.service.OriginAdult5DService;
+import dataProcess.service.WeightOriginAdult2DService;
+import dataProcess.service.weightProcess.WeightContainer;
 import mpdp.algorithm.CommonBG;
+import mpdp.algorithm.WeightBG;
 import org.springframework.context.ApplicationContext;
 import util.SpringUtil;
 
@@ -30,7 +35,12 @@ public class Mpdp {
 
     public static void main(String[] args) throws Exception {
         ApplicationContext context = SpringUtil.initSpringContainer();
-        CommonBG commonBG = new CommonBG();
+        WeightContainer weightContainer = SpringUtil.getBean(context,WeightContainer.class);
+        weightContainer.initWeightContainer();
+        System.out.println("hh");
+
+
+        //CommonBG commonBG = new CommonBG();
         //得到所有待分组元素
         //OriginAdult2DService originAdult2DService = SpringUtil.getBean(context, OriginAdult2DService.class);
         //List<OriginAdult2D> originAdult2DList = originAdult2DService.selectAll();
@@ -41,8 +51,8 @@ public class Mpdp {
         //OriginAdult4DService originAdult4DService = SpringUtil.getBean(context, OriginAdult4DService.class);
         //List<OriginAdult4D> originAdult4DList = originAdult4DService.selectAll();
 
-        OriginAdult5DService originAdult5DService = SpringUtil.getBean(context, OriginAdult5DService.class);
-        List<OriginAdult5D> originAdult5DList = originAdult5DService.selectAll();
+        //OriginAdult5DService originAdult5DService = SpringUtil.getBean(context, OriginAdult5DService.class);
+        //List<OriginAdult5D> originAdult5DList = originAdult5DService.selectAll();
 
         //2维分组
         //List<OriginAdult2D> restTuples =  commonBG.commonBG2D(originAdult2DList, context);
@@ -51,7 +61,15 @@ public class Mpdp {
         //四维分组
         //List<OriginAdult4D> restTuples = commonBG.commonBG4D(originAdult4DList, context);
         //五维分组
-        List<OriginAdult5D> restTuples = commonBG.commonBG5D(originAdult5DList, context);
+        //List<OriginAdult5D> restTuples = commonBG.commonBG5D(originAdult5DList, context);
+
+        WeightBG weightBG = new WeightBG();
+
+        WeightOriginAdult2DService weightOriginAdult2DService = SpringUtil.getBean(context,WeightOriginAdult2DService.class);
+        List<WeightOriginAdult2D> weightOriginAdult2DS = weightOriginAdult2DService.selectAll();
+
+        //带权二维分组
+        List<WeightOriginAdult2D> restTuples = weightBG.weightBG2D(weightOriginAdult2DS,context);
 
 
         System.out.println("剩余元组" + restTuples.size());

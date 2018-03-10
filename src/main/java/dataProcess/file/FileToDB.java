@@ -5,8 +5,6 @@
 package dataProcess.file;
 
 import com.google.common.collect.Lists;
-import dataProcess.model.OriginAdult;
-import dataProcess.model.OriginAdult.Builder;
 import dataProcess.model.OriginAdult2D;
 import dataProcess.model.OriginAdult3D;
 import dataProcess.model.OriginAdult4D;
@@ -15,8 +13,6 @@ import dataProcess.service.OriginAdult2DService;
 import dataProcess.service.OriginAdult3DService;
 import dataProcess.service.OriginAdult4DService;
 import dataProcess.service.OriginAdult5DService;
-import dataProcess.service.OriginAdultService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import util.FileHandler;
 import util.SpringUtil;

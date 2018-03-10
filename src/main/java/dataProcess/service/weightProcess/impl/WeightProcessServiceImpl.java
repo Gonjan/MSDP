@@ -19,6 +19,11 @@ public class WeightProcessServiceImpl implements WeightProcessService {
 
     private WeightContainer weightContainer;
 
+    /**
+     * 获取一个元组中所有隐私属性值的综合权值
+     * @param sensitives
+     * @return
+     */
     @Override
     public Double processWeight(List<String> sensitives) {
         if(CollectionUtils.isEmpty(sensitives)) {
@@ -38,6 +43,11 @@ public class WeightProcessServiceImpl implements WeightProcessService {
         return toupleWeight;
     }
 
+    /**
+     * 获取单个属性值的权值
+     * @param value
+     * @return
+     */
     private Double getValueFinanlWeight(String value) {
         Double valueFinalWeight = null;
         //获取属性值对应的权值

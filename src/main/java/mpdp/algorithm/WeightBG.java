@@ -53,7 +53,8 @@ public class WeightBG {
         List<Long> timeList = Lists.newArrayList();
 
         //创建分组，保存每次得到的分组结果
-        WeightGroup<WeightOriginAdult2D> group = new WeightGroup<>(L_PARAM,3.0);
+        double maxGroupWeight = (0.1157 + 0.1125) * L_PARAM;
+        WeightGroup<WeightOriginAdult2D> group = new WeightGroup<>(L_PARAM,maxGroupWeight);
 
         //已经分好组的元组，最后插入数据库
         List<WeightAdult2DGroup> hasInGroupTuples = Lists.newArrayList();
@@ -68,16 +69,27 @@ public class WeightBG {
         for(int i = 1; i <= 10; i++) {
             TimeKeepUtil.startTheTime();
             while(!weightOriginAdult2DS.isEmpty()) {
+
+                //加权L-拆分分组
+                int l_part = weightOriginAdult2DS.size() / L_PARAM;
+                int currentLocation = 0;
+
                 Iterator<WeightOriginAdult2D> originAdult2DIterator = weightOriginAdult2DS.iterator();
                 while(originAdult2DIterator.hasNext()) {
+                    currentLocation ++;
                     WeightOriginAdult2D weightOriginAdult2D = originAdult2DIterator.next();
-
                     //当前元组能够加入分组
                     if(putinChoosens(weightOriginAdult2D, choosenAttrs, group)) {
                         group.add(weightOriginAdult2D);
                         group.setGroupWeight(group.getGroupWeight() + weightOriginAdult2D.getWeight());
                         //删除当前元组
                         originAdult2DIterator.remove();
+
+                        while(currentLocation < group.getGroupContainer().size() * l_part) {
+                            currentLocation ++;
+                            originAdult2DIterator.next();
+                        }
+
                         //当前分组已满,达到分组要求
                         if(group.isFull()) {
                             //保存分组
@@ -221,6 +233,23 @@ public class WeightBG {
         }
 
         return sum / (size - 2);
+    }
+
+    public static void main(String[] args) {
+        List<String> list = Lists.newArrayList();
+        for(int i = 0; i < 20; i++) {
+            list.add(new Integer(i).toString());
+        }
+
+        Iterator<String> it = list.iterator();
+
+        while(it.hasNext()) {
+            for(int i = 0; i < 10; i ++) {
+                it.next();
+            }
+            System.out.println(it.next());
+        }
+
     }
 
 
