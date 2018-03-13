@@ -1,0 +1,153 @@
+第一章 绪论
+1.1数据发布研究背景及意义
+
+随着互联网的高速发展，社会信息化和网络化的发展导致数据爆炸式增长，同时大量个人数据能够用数据计算的方法进行收集和分。
+大量数据信息存在蕴含了不可估量的信息价值，因此也导致了数据挖掘工具的广泛使用，各种公开未公开的用数据被各种分析挖掘
+其中的信息，在这些信息创造价值的同时，也使得人们对保护用户个人的隐私信息不被泄露，不被恶意使用泄露敏感信息等问题有
+了极大的关注[1]。然而数据发布是在当前数据管理、数据挖掘与信息共享应用中等环节中很重要的一个部分，是指从大量的数据中
+通过算法搜索隐藏于其中信息，从大批数据中提取出潜在的、有价值的信息的过程，该过程效果是否能取得好的效果取决于是否有
+可用的高质量数据。信息共享是指按照一定的规则或者协议在多个数据持有者之间进行交换数据信息。除此之外，在实际生活场景
+中，由于公共科学或公共服务等社会化需求，有很多机构需要定期对外发布数据。例如，医院定期发布的患者医疗统计数据，上市
+公司需要定期公布其公司的财务报表等。在当前网络信息技术如此发达的情况下，数据存储技术和个人或商用计算机都具备了高性能
+的处理能力后，海量数据的收集、公布和各种分析变得越来越简单易行。【2】与此同时，同样给数据的隐私保护问题带来了巨大的挑
+战。比如，通过对医院发布的病患的医疗数据进行分析，可以发现各种疾病之间的关联性或分布区域性等特点，具有巨大的科学研究
+价值。但同时在分析的过程中，必然会涉及到患者的一些个人数据，从而可能造成病人包括疾病等敏感信息的泄露。因此，如何有效
+地解决数据发布过程中可能存在的隐私泄露问题，已经成为目前数据管理、数据挖掘和信息共享领域的一个研究热点，形成一个新的
+研究领域——数据发布中的隐私保护【3】。
+    近几年隐私保护数据发布（Privacy-Preserving Data Publishing，PPDP)【4】受到了广泛关注，隐私逐渐为人们熟知和关注。在
+网络时代到来之前，在个人、政府、法律、组织等的多重可信任个人或机构的保护下用户的隐私是相对安全的，自从网络出现之后，个人隐私权的相关问题逐渐扩展到了整个网络空间。主要是因为网络社会的开放特征，导致个人隐私遭受严重威胁。如何保护用户个人信息的绝对安全成为最受关注的问题。隐私保护数据发布已经成为一个新兴的、热门的研究领域【5-7】。如果因为隐私保护问题在拒绝数据的发布和共享，一方面对外发布数据，数据中含有大量有价值的信息，而数据不能发布和共
+享，这对数据使用者、各个行业甚至是整个社会来说都是一个巨大的损失。另一方面，
+若在没有考虑隐私保护的情况下，数据的发布和共享会给个体带来不可预料的精神、经
+济损失。通过研究数据的隐私保护发布，可以完善隐私保护在数据中的应用，使持有数据机构可以更加快速、安全地发布数据，供社会团体、研究机构研究分析，由此增加数据利用价值，并且保证了用户的隐私不被泄漏，使得数据发布和分析过程中隐私泄漏的问题得以解决。
+
+
+
+
+1.2数据发布中隐私研究保护研究现状
+
+目前，关于数据发布中的隐私保护研究大部分集中在结构化式数据集的数据发布上，数据以表的形式存储，行表示记录，列则表示记
+录的属性，每条记录对应现实中的一个个体，数据发布者对数据进行发布时，一方面要使得发布的匿名数据不泄露数据中个体的隐私
+信息，另一方面需要保证发布的匿名数据具有高可用性，即仍然能够根据发布的匿名数据进行较准确的数据分析，例如集合查询等。所以，数据发布中的隐私保护研究中主要解决的问题是在既满足发布数据保护个体记录的隐私安全又使得发布数据具有较高的可用性。目前，为达到隐私保护的目的已经提出了很多方法来对发布数据记录总中数据进行匿名处理。包括泛化【8】【9】、压缩【10】【11】、向原始数据中添加噪音数据【12】【13】、发布在安全
+范围内的边缘数据和数据交换技术等。数据发布中的隐私泄露主要可以分为身
+份泄露和属性泄露。当目标个体与匿名数据中的某条具体记录关联起来时就会
+发生身份泄露；而属性泄露则是指匿名数据会泄露目标个体的一些其他的新敏感信息。
+数据发布中的隐私保护研究主要可以分为三个部分：(1)数据发布隐私保护模型的研究，它主要是作为一个衡量
+的标准来判断发布的匿名数据能否为包含在数据中的个体提供足够的隐私保护，例
+如广泛使用的 k-anonymity【6】和l − diversity【14】等隐私规则；(2)根据某种隐私数据发布模型计
+算匿名数据的算法研究，例如最先提出的计算满足k-anonymity 规则的匿名数据的近
+似算法【15】等；(3)在保证害隐私保护的前提下，提高发布数据的可用性研究，例如
+anatomy[1]方法等。
+
+由P. Samarati 和L. Sweeney【6】提出的
+k-匿名模型（k-anonimity），该模型对数据表中的准标识符属性进行了约束，要求发布
+的数据表在准标识符属性上的任意一条记录都无法与其他k-1 条记录区分，该模型虽然
+可以避免身份暴露，但却常常发生属性暴露。A. Machanavajjhalla 等【14】进一步提出了l-
+多样化模型（l-diversity），它要求每个分组中不同的敏感属性取值不应少于l 个。Li
+Ninghui 等【16】提出t-接近模型（t-closeness），它要求每个等价类中所有敏感值的分布要
+与原始数据表中敏感值的分布接近。上述模型均是先删除身份标识属性，而后对准标识
+属性进行适当的概化。2008 年，杨晓春等人[2]经过对多敏感属性数据的隐私保护问题深入研究
+后，提出了一种多维桶分组技术，该方法是一种基于有损链接的面向多敏感属性数据发
+布隐私保护方法。2011 年，刘善成【17】等人对多维桶分组技术进行深入分析和研究，提
+出了（g，l）-分组技术，不仅对分组中敏感值的多样性进行约束，还对不同敏感值之
+间的差异性提出了要求。
+
+自从2006 年Xiao Xiaokui,Tao Yufei[7]等人第一次提出了个性化匿名的概念之后，个性化隐私保护技
+术迅速吸引了众多学者，成为数据发布中个人隐私保护技术的研究热点之一。Ye【18】
+等人通过对已有的（α，k）-anonymity 模型进行研究和改进，提出泛化敏感属性值的方
+法，实现了个性化。韩建民[8]等人提出一种完全（α，k）-anonymity 模型，根据不同
+的敏感属性值的敏感性为其指定相应的频率约束α，从而达到面向敏感值的个性化匿名
+的目的。程亮[23]等人提出一种满足敏感信息的多样性非相关约束的a-多样性k-匿名模
+型，并设计了一个改进的微聚集算法的框架代替了传统的泛化/抑制实现匿名化。黄玉
+蕾【19】等人提出一种基于k-匿名模型的改进算法，同时考虑不同敏感属性的整体敏感度
+以及用户对具体敏感属性不同需求，实现基于多敏感值的个性化隐私保护算法。
+
+综上所述，自个性化匿名概念提出后，个性化隐私保护技术的研究大都针对单敏感
+属性进行的，而针对多敏感属性的个性化隐私保护的研究还很少。
+
+
+韩建民, 于娟, 虞慧群, 贾泂. 面向敏感值的个性化隐私保护[J]. 电子学报,2010,
+38(7):1723-1728P.
+
+
+
+X. Xiao and Y. Tao. Anatomy: Simple and effective privacy preservation. in: the 32nd International Conference on Very Large Data Bases (VLDB’06). Seoul, Korea. 2006. 139~150
+
+
+
+1.3数据发布中的隐私规则
+1.4本文主要研究内容与组织架构
+第二章	 数据发布中的隐私保护
+2.1 隐私保护中的相关理论
+2.2 隐私保护中数据发布匿名模型介绍
+2.3 隐私保护原则与信息度量
+2.4 本章小结
+
+
+
+
+
+【1】V. S. Iyengar. Transforming data to satisfy privacy constraints. in: the 8th ACM
+SIGKDD International Conference on Knowledge Discovery and Data Mining.
+Edmonton, Alberta, Canada: ACM Press Press, 2002. 279~288
+
+【2】Agrawal R,Srikant R.Privacy-preserving data mining[C].ACM SIGMOD.ACM Press,May
+2000:P.439-450.
+
+【3】Wang Y,Wu X,Wu L.Differential Privacy Preserving Spectral Graph Analysis[J]. Advances in
+Knowledge Discovery and Data Mining.Springer Berlin Heidelberg,2013:329-340.
+
+【4】孙美丽.美国和欧盟的数据隐私保护策略[J].情报科学,2004,22(10):1265-1267.
+
+【5】Fung B C,Wang Ke,Chen Rui,et al. Privacy-preserving data publishing:a survey on recent
+developments[J]. ACM Computer Surveys(CSUR),2012,42(4):1-53.
+
+【6】Sweeney L. k-anonymity: a model for protecting privacy[J]. International Journal of
+Uncertainty,Fuzziness and Knowledge Based Systems,2002,10(5):557-570.
+
+【7】Agrawal R,Evfimievski A,Srikant R. Information sharing across private database[C].ACM SIGMOD
+2003.2003:P.86-97.
+
+【8】R. Bayardo and R. Agrawal. Data privacy through optimal k-anonymization. in: the
+21st International Conference on Data Engineering (ICDE’05). Tokyo, Japan: IEEE
+Cpmputer Society Press Press, 2005. 217~228
+
+【9】K. LeFevre, D. J. DeWitt, and R. Ramakrishnan. Incognito: Efficient full-domain
+k-anonymity. in: the 24th ACM SIGMOD International Conference on Management
+of Data (SIGMOD’05). Baltimore, Maryland: ACM Press Press, 2005. 49~60
+
+【10】P. Samarati and L. Sweeney. Protecting privacy when disclosing information:
+k-anonymity and its enforcement through generalization and suppression. in: IEEE
+Symposium on Research in Security and Privacy, May 1998.
+
+【11】L. H. Cox. Suppression, methodology and statistical disclosure control. Journal of
+the American Statistical Association, 1980, 75(370):377~385
+
+【12】R. Agrawal and R. Srikant. Privacy-preserving data mining. in: the 19th ACM
+SIGMOD International Conference on Management of Data (SIGMOD’00). Dallas,
+Texas, USA: ACM Press Press, 2000. 439~450
+
+【13】S. Chawla, C. Dwork, and F. McSherry et al. Toward privacy in public databases. in:
+the 2nd Theory of Cryptography Conference (TCC’05). Cambridge, MA, USA.2005. 363~385
+
+【14】A. Machanavajjhala, J. Gehrke, and D. Kifer. l -diversity: Privacy beyond
+k-anonymity. in: 22nd International Conference on Data Engineering (ICDE’06).
+Atlanta, Georgia, USA: IEEE Computer Society Press Press, 2006. 24
+
+【15】A. Meyerson, R. Williams. On the complexity of optimal k-anonymity. in: the 23rd
+ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems
+(PODS’04). Paris, France: ACM Press Press, 2004. 223~228
+
+【16】Li Ninghui,Li Tiancheng. t-closeness: privacy beyond k-anonymity and l-diversity[C]//Jarke M,Carey
+M J,Dittrich K R,et al. Proceedings of the 23rd International Conference on Data Engineering.
+Istanbul: IEEE,2007:106-115.
+
+【17】刘善成, 金华, 鞠时光. 数据发布中面向多敏感属性的隐私保护技术[J].计算机应用研
+究,2011,28(6):2206-2214.
+
+【18】Ye X J,Zhang Y W,Liu M.A Personalized (α,k)-Anonymity Model[C]//Proceedings of the 9th
+International Conference on Web-Age Information Management(WAIM’08).2008:341-348.
+
+【19】黄玉蕾, 林青, 戴慧珺. 基于多敏感值的个性化隐私保护算法[J]. 计算机与数字工
+程,2016,9:1761-1800.
+
+【20】
